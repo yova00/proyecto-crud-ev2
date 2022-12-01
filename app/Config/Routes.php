@@ -83,14 +83,14 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->get('settings', 'Auth\SettingsController::settings', ['as' => 'settings']); // new
     $routes->post('settings-update-system', 'Auth\SettingsController::updateSystem'); // new
     $routes->post('settings-update-email', 'Auth\SettingsController::updateEmail'); // new
-#
-    #$routes->get('productos', 'Auth\ProductoController::lista', ['as' => 'productos']);
-    #$routes->get('productos/(:num)', 'Auth\ProductoController::show/$1');
-    #$routes->get('productos/create', 'Auth\ProductoController::create', ['as' => 'create']);
-    #$routes->post('productos/create', 'Auth\ProductoController::store');
-    #$routes->get('productos/edit/(:num)', 'Auth\ProductoController::edit/$1');
-    #$routes->post('productos/update', 'Auth\ProductoController::update');
-    #$routes->get('productos/delete/(:num)', 'Auth\ProductoController::delete/$1');
+#producto
+    $routes->get('productos', 'Auth\ProductoController::productos', ['as' => 'productos']); // new
+    $routes->get('productos/enable/(:num)', 'Auth\ProductoController::enable'); // new
+    $routes->get('productos/edit/(:num)', 'Auth\ProductoController::edit'); // new
+    $routes->post('productos/update-producto', 'Auth\ProductoController::update'); // new
+    $routes->get('productos/delete/(:num)', 'Auth\ProductoController::delete'); // new
+    $routes->post('productos/create-producto', 'Auth\ProductoController::createproducto');
+    $routes->get('productos/logs', 'Auth\ProductoController::productoLogs', ['as' => 'productologs']); // new
 
 });
 
