@@ -28,7 +28,7 @@
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
           <li class="nav-item dropdown">
             <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="text-capitalize"><?= $userData['name'] ?></span>
+              <span class="text-capitalize">Administrador</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
               <a class="dropdown-item" href="<?= site_url('profile') ?>">Cuenta</a>

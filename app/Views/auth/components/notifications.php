@@ -26,7 +26,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
 
-        <h4 class="alert-heading">más problemas por aqui!</h4>
+        <h4 class="alert-heading">Más problemas por aqui!</h4>
 
         <ul class="">
             <?php foreach (session('errors') as $error) : ?>

@@ -197,7 +197,7 @@ class UsersController extends Controller
         // send_activation_email($user['email'], $user['activate_hash']);
 
 		// success
-        return redirect()->back()->with('success', 'Success! You created a new account');
+        return redirect()->back()->with('Aceptado', 'Se ha creado una cuenta nueva.');
 	}
 
 	public function userLogs() 
