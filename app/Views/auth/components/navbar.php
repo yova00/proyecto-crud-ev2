@@ -40,10 +40,11 @@
         
     </div>
 </nav>
+
 <div class="nav-scroller bg-white shadow-sm">
-        <nav class="nav nav-underline">
-            <a class="nav-link active" href="<?= site_url('productos') ?>">Productos</a>
-            <a class="nav-link" href="<?= site_url('ventas') ?>">Ventas<span class="badge badge-pill badge-danger align-text-bottom"><?= $ventacount ?></span></a>
+    <nav class="nav nav-underline">
+            <a class="nav-link active" href="<?= site_url('productos') ?>">Productos<span class="badge badge-pill badge-danger align-text-bottom">2</a>
+            <a class="nav-link" href="<?= site_url('ventas') ?>">Ventas<span class="badge badge-pill badge-danger align-text-bottom"> 4 </span></a>
             <a class="nav-link disabled" href="<?= site_url('productos/logs') ?>">Catalogo</a>
-        </nav>
-    </div>
+    </nav>
+</div>
