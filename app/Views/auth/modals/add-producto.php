@@ -16,24 +16,24 @@
             <div class="form-group row">
                 <div class="col">
                     <label for="nombre">Nombre</label>
-                    <input class="form-control" required type="text" name="nombre" value="<?= old('nombre') ?>" placeholder="Ingresa nombres"/>
+                    <input class="form-control" required type="text" name="nombre" value="<?= old('nombre') ?>" placeholder="Ingresa nombre producto  "/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="categoria">Categoria</label>
-                <input class="form-control" required type="text" name="categoria" value="<?= old('categoria') ?>" placeholder="Ingresa nombre de usuario"/>
-            </div>
-            <div class="form-group">
-                <label for="precio">Precio</label>
-                <intpu class="form-control" required type="int" name="precio" value="<?= old('precio') ?>" placeholder="Ingresa stock"/>
+                <input class="form-control" required type="text" name="categoria" value="<?= old('categoria') ?>" placeholder="Ingresa categoria"/>
             </div>
             <div class="form-group">
                 <label for="stock">Stock</label>
-                <intpu class="form-control" required type="int" name="stock" value="<?= old('stock') ?>" placeholder="Ingresa stock"/>
+                <input class="form-control" required type="int" name="stock" value="<?= old('stock') ?>"  placeholder="Ingresa stock"/>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <input class="form-control" required type="int" name="precio" value="<?= old('precio') ?>" placeholder="Ingresa precio" />
             </div>
             <div class="text-right">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cerrar</button>
-                <button type="submit" class="btn btn-primary" name="registerButton"><i class="fas fa-plus-circle"></i> Agregar producto</button>
+                <button type="submit" class="btn btn-primary" name="Button"><i class="fas fa-plus-circle"></i> Agregar producto</button>
             </div>
         </form>
       </div>

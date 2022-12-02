@@ -99,7 +99,7 @@ class ProductoController extends Controller
 			return redirect()->back()->withInput()->with('errors', $productos->errors());
         }
 
-        return redirect()->back()->with('success', lang('Auth.enableproducto'));
+        return redirect()->back()->with('success', 'Volvio a estar disponible el producto');
 	}
 
 	public function edit()
@@ -150,7 +150,7 @@ class ProductoController extends Controller
 			return redirect()->back()->withInput()->with('errors', $productos->errors());
         }
 
-        return redirect()->back()->with('success', lang('Auth.updateSuccess'));
+        return redirect()->back()->with('success', 'Producto actualizado y guardado correctamente en BDD, presione Volver para ir al listado productos'); 
 	}
 
 	public function delete()
@@ -164,7 +164,7 @@ class ProductoController extends Controller
 		// delete producto using the id
 		$productos->delete($id);
 
-        return redirect()->back()->with('success', lang('Auth.accountDeleted'));
+        return redirect()->back()->with('success', 'Producto eliminado correctamente de BDD');
 	}
 
 	public function createproducto()
@@ -190,14 +190,6 @@ class ProductoController extends Controller
         return redirect()->back()->with('Aceptado', 'Se ha ingresado un producto nuevo.');
 	}
 
-	public function productoLogs() 
-	{
-		// load logs model
-		$logs = new LogsModel();
-		// get all producto logs
-		$productologs = $logs->findAll();
-
-		return view('auth/producto-logs', ['productoData' => $this->session->productoData, 'data' => $productologs]);
-	}
+	
 
 }

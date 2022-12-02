@@ -9,10 +9,10 @@
     <meta name="generator" content="">
     <title>LaPokeparada</title>
 
-    <!-- load extended styles -->
+   
     <?= $this->renderSection('style') ?>
 
-    <!-- default styles  -->
+    <!--  estilos de codeigniter  -->
     <link rel="stylesheet" href="<?= base_url('vendor/fontawesome/css/fontawesome.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('vendor/fontawesome/css/solid.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('vendor/fontawesome/css/brands.min.css'); ?>">
@@ -28,14 +28,13 @@
       <!-- notifications -->
       <?= view('App\Views\auth\components\notifications') ?>
 
-      <!-- load content from other views -->
+      <!-- vistas -->
       <?= $this->renderSection('main') ?>
     </main>
-
+  <!-- scripts -->
     <script src="<?= base_url("vendor/jquery/jquery.min.js") ?>" type="text/javascript"></script>
     <script src="<?= base_url("vendor/bootstrap/js/bootstrap.bundle.min.js") ?>" type="text/javascript"></script>
     
-    <!-- load extended scripts -->
     <?= $this->renderSection('script') ?>
 </body>
 

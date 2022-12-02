@@ -22,14 +22,7 @@
     <?= view('App\Views\auth\components\navbar') ?>
 
      
-    <div class="nav-scroller bg-white shadow-sm">
-        <nav class="nav nav-underline">
-            <a class="nav-link active" href="<?= site_url('productos') ?>">Productos</a>
-            <a class="nav-link" href="#">Ventas<span class="badge badge-pill bg-light align-text-bottom">27</span></a>
-            <a class="nav-link disabled" href="#">Catalogo</a>
-            <a class="nav-link disabled" href="#">Estadisticas</a>
-        </nav>
-    </div>
+    
     <main role="main" class="">
       <div class="jumbotron bg-light">
           <div class="container heroe">

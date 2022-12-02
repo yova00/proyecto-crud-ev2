@@ -2,16 +2,17 @@
 
 use CodeIgniter\Model;
 
-class ProductoModel extends Model
+class VentaModel extends Model
 {
-	protected $table      = 'productos';
-	protected $primaryKey = 'id_p';
+	protected $table      = 'ventas';
+	protected $primaryKey = 'id_v';
+
 	protected $returnType = 'array';
 	protected $useSoftDeletes = false;
 
 	// this happens first, model removes all other fields from input data
 	protected $allowedFields = [
-		'nombre', 'stock', 'categoria','precio', 'active', 'created_at', 'updated_at', 'active', 'deleted_at'
+		'n_cliente', 'email', 'producto', 'cantidad', 'total', 'totaliva', 'active'
 	];
 
 	protected $useTimestamps = true;
@@ -24,26 +25,27 @@ class ProductoModel extends Model
 	// we need different rules for registration, account update, etc
 	protected $dynamicRules = [
 		'registration' => [
-			'nombre' 		=> 'required|alpha_space|min_length[2]',
-			'stock' 			=> 'required|alpha_space|min_length[2]',
-			'categoria' 				=> 'required|alpha_space|min_length[2]',
-            'precio' 				=> 'required|int',
-			
+			'n_cliente' 		=> 'required|alpha_space|min_length[2]',
+			'producto' 			=> 'required|alpha_space|min_length[2]',
+			'cantidad' 				=> 'required|integer',
+			'email' 			=> 'required|valid_email|is_unique[ventas.email,id_v,{id_v}]',
+			'totaliva'			=> 'required|integer',
+            'total'			=> 'required|double',
 		],
 		'updateAccount' => [
-			'id_p'	=> 'required|is_natural',
-			'nombre'	=> 'required|alpha_space|min_length[2]'
+			'id_v'	=> 'required|is_natural',
+			'n_cliente'	=> 'required|alpha_space|min_length[2]'
 		],
 		'updateProfile' => [
-			'id_p'	=> 'required|is_natural',
-			'nombre'	=> 'required|alpha_space|min_length[2]',
-			'stock'	=> 'required|integer',
-			'categoria'	=> 'required|alpha_space|min_length[2]',
-            'precio'	=> 'required|integer',
+			'id_v'	=> 'required|is_natural',
+			'n_cliente'	=> 'required|alpha_space|min_length[2]',
+			'producto'	=> 'required|alpha_space|min_length[2]',
+			'cantidad'	=> 'required|integer',
+			'email'	=> 'required|valid_email|is_unique[ventas.email,id_v,{id_v}]',
 			'active'	=> 'required|integer',
 		],
-		'enableproducto' => [
-			'id_p'	=> 'required|is_natural',
+		'enableventa' => [
+			'id'	=> 'required|is_natural',
 			'active'	=> 'required|integer'
 		]
 	];
@@ -51,9 +53,6 @@ class ProductoModel extends Model
 	protected $validationMessages = [];
 
 	protected $skipValidation = false;
-
-
-
 
     //--------------------------------------------------------------------
 
@@ -66,5 +65,6 @@ class ProductoModel extends Model
 	}
 
     //--------------------------------------------------------------------
+
 
 }

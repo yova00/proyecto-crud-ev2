@@ -34,15 +34,12 @@ class SettingsController extends Controller
 	public function settings() 
 	{
 		$settings = new SettingsModel();
-		$emailconfig = new EmailconfigModel();
 
 		$system = $settings->where('id', 1)->first();
-		$email = $emailconfig->where('id', 1)->first();
 
 		return view('auth/settings', [
 			'userData' => $this->session->userData, 
 			'system' => $system, 
-			'email' => $email
 		]);
 	}
 
@@ -78,54 +75,4 @@ class SettingsController extends Controller
         return redirect()->back()->with('success', lang('Auth.updateSuccess'));
 	}
 
-	public function updateEmail()
-	{
-		$rules = [
-			'id'	=> 'required|is_natural',
-			'fromname'	=> 'required',
-			'fromemail'	=> 'required',
-			'protocol'	=> 'required',
-			'host'	=> 'required',
-			'username'	=> 'required',
-			'security'	=> 'required',
-			'port'	=> 'required',
-		];
-
-		if (! $this->validate($rules)) {
-			return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-		}
-
-		$emailconfig = new EmailconfigModel();
-
-		// set the password variable
-		$hashedpass = null;
-		
-		// get the password text
-		$password = $this->request->getPost('password');
-		
-		// pass the encrypted text to hashedpass variable
-		if ($password !== null) 
-		{
-			$hashedpass = password_hash($password, PASSWORD_DEFAULT);
-			// else value is null by default
-		} 
-
-		$email = [
-			'id'  	=> $this->request->getPost('id'),
-			'fromname' 	=> $this->request->getPost('fromname'),
-			'fromemail' 	=> $this->request->getPost('fromemail'),
-			'protocol' 	=> $this->request->getPost('protocol'),
-			'host' 	=> $this->request->getPost('host'),
-			'username' 	=> $this->request->getPost('username'),
-			'security' 	=> $this->request->getPost('security'),
-			'port' 	=> $this->request->getPost('port'),
-			'password' 	=> $hashedpass
-		];
-
-		if (! $emailconfig->save($email)) {
-			return redirect()->back()->withInput()->with('errors', $emailconfig->errors());
-        }
-
-        return redirect()->back()->with('success', lang('Auth.updateSuccess'));
-	}
 }
