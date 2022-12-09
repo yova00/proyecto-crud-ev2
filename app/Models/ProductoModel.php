@@ -11,7 +11,7 @@ class ProductoModel extends Model
 
 	// this happens first, model removes all other fields from input data
 	protected $allowedFields = [
-		'nombre', 'stock', 'categoria','precio', 'active', 'created_at', 'updated_at', 'active', 'deleted_at'
+		'nombre', 'stock', 'categoria','precio', 'created_at', 'updated_at', 'active', 'deleted_at'
 	];
 
 	protected $useTimestamps = true;
