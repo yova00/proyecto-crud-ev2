@@ -21,6 +21,10 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="<?= site_url('calculator') ?>">Calcular IVA</a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('settings') ?>">Configuraciones</a>
             </li>
         </ul> 

@@ -101,6 +101,8 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->post('ventas/create-venta', 'Auth\VentaController::createventa');
     $routes->get('ventas/logs', 'Auth\VentaController::ventaLogs', ['as' => 'ventalogs']); // new
 
+    
+
 });
 
 
