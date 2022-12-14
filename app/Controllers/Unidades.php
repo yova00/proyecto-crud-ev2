@@ -18,7 +18,7 @@ class Unidades extends BaseController
         $unidades = $this->unidades->where('activo',$activo)->findAll();
         $data = ['titulo' => 'Unidades', 'datos' => $unidades];
 
-        echo view('header');
+        echo view('auth/componets/navbar');
         echo view('auth/unidades/unidades',$data);
         echo view('footer');
     }
