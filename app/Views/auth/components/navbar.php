@@ -22,7 +22,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
                   <a class="dropdown-item" href="<?= site_url('productos') ?>">Productos</a>
-                  <a class="dropdown-item" href="<?= site_url('unidades/uniades') ?>">Unidades</a>
+                  <a class="dropdown-item" href="<?= site_url('unidades') ?>">Unidades</a>
                   <a class="dropdown-item" href="<?= site_url('unidades') ?>">Catalogo</a>
                 </div>
               </li>

@@ -31,7 +31,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Auth\LoginController::login');
-$routes->get('/', 'Unidades::unidades');
+$routes->get('/unidades', 'Unidades::index');
 
 
 /**
@@ -86,6 +86,7 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->get('settings', 'Auth\SettingsController::settings', ['as' => 'settings']); // new
     $routes->post('settings-update-system', 'Auth\SettingsController::updateSystem'); // new
     $routes->post('settings-update-email', 'Auth\SettingsController::updateEmail'); // new
+
     #producto
     $routes->get('productos', 'Auth\ProductoController::productos', ['as' => 'productos']); // new
     $routes->get('productos/enable/(:num)', 'Auth\ProductoController::enable'); // new
@@ -94,6 +95,7 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->get('productos/delete/(:num)', 'Auth\ProductoController::delete'); // new
     $routes->post('productos/create-producto', 'Auth\ProductoController::createproducto');
     $routes->get('productos/logs', 'Auth\ProductoController::productoLogs', ['as' => 'productologs']); // new
+
 
     #ventas
     $routes->get('ventas', 'Auth\VentaController::ventas', ['as' => 'ventas']); // new
