@@ -20,6 +20,6 @@ class Unidades extends BaseController
 
         echo view('auth/componets/navbar');
         echo view('auth/unidades/unidades',$data);
-        echo view('footer');
+        echo view('auth/componets/footer');
     }
 }
