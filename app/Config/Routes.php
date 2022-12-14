@@ -31,6 +31,8 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Auth\LoginController::login');
+$routes->get('/', 'Unidades::unidades');
+
 
 /**
  * --------------------------------------------------------------------
@@ -38,6 +40,7 @@ $routes->get('/', 'Auth\LoginController::login');
  * --------------------------------------------------------------------
  */
 $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
+
 	// Registration
 	$routes->get('register', 'Auth\RegistrationController::register', ['as' => 'register']);
     $routes->post('register', 'Auth\RegistrationController::attemptRegister');
