@@ -32,6 +32,10 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Auth\LoginController::login');
 $routes->get('/unidades', 'Unidades::index');
+$routes->get('/unidades/nuevo', 'Unidades::nuevo');
+$routes->post('/unidades/insertar', 'Unidades::insertar');
+
+
 
 
 /**
