@@ -29,6 +29,19 @@
               </li>
             </ul>
 
+            <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+              <li class="nav-item dropdown">
+                <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="text-capitalize">Ventas</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                  <a class="dropdown-item" href="<?= site_url('productos') ?>">Productos</a>
+                  <a class="dropdown-item" href="<?= site_url('unidades') ?>">Unidades</a>
+                  <a class="dropdown-item" href="<?= site_url('unidades') ?>">Catalogo</a>
+                </div>
+              </li>
+            </ul>
+
             <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('calculator') ?>">Calcular IVA</a>
             </li>
