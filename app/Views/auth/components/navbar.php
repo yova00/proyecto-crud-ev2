@@ -35,7 +35,7 @@
                   <span class="text-capitalize">Ventas</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-                  <a class="dropdown-item" href="<?= site_url('productos') ?>">Productos</a>
+                  <a class="dropdown-item" href="<?= site_url('productos') ?>">Ventas</a>
                   <a class="dropdown-item" href="<?= site_url('unidades') ?>">Unidades</a>
                   <a class="dropdown-item" href="<?= site_url('unidades') ?>">Catalogo</a>
                 </div>
