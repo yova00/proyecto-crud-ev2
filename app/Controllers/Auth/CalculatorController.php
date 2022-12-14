@@ -21,7 +21,7 @@ class CalculatorController extends Controller
 	 */
 	protected $config;
 
-
+ 
     //--------------------------------------------------------------------
 
 	public function __construct()
@@ -32,5 +32,5 @@ class CalculatorController extends Controller
 
     //--------------------------------------------------------------------
 
-    
+
 }
