@@ -7,3 +7,10 @@
 </i>
       </div>
     </footer>
+
+    <script src="<?= base_url("vendor/jquery/jquery.min.js") ?>" type="text/javascript"></script>
+    <script src="<?= base_url("vendor/bootstrap/js/bootstrap.bundle.min.js") ?>" type="text/javascript"></script>
+
+</body>
+
+</html>
