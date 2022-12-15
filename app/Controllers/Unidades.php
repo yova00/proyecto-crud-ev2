@@ -39,4 +39,28 @@ class Unidades extends BaseController
         return redirect()->to(site_url('/unidades'));
     }
 
+    public function editar($id)
+    {
+        $unidad = $this->unidades->where('id',$id)->first();
+        $data = ['titulo' => 'Editar unidad', 'datos' => $unidad];
+
+        echo view('auth/components/header');
+        echo view('auth/unidades/editar',$data);
+        echo view('auth/components/footer');
+    }
+
+    public function actualizar()
+    {
+        $this->unidades->update($this->request->getPost('id'),['nombre' => $this->request->getPost('nombre'),
+                                'nombre_corto' => $this->request->getPost('nombre_corto')]);
+        return redirect()->to(site_url('/unidades'));
+    }
+
+    public function eliminar($id)
+    {
+        $this->unidades->update($id,['activo' => 0]);
+        return redirect()->to(site_url('/unidades'));
+    }
+    
+    
 }
