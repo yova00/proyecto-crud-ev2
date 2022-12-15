@@ -15,22 +15,59 @@
             <?= csrf_field() ?>
             <div class="form-group row">
                 <div class="col">
+                    <label for="codigo">Codigo</label>
+                    <input class="form-control" required type="text" name="codigo" value="<?= old('codigo') ?>" placeholder="Ingresa codigo producto"/>
+                </div>
+                <div class="col">
                     <label for="nombre">Nombre</label>
-                    <input class="form-control" required type="text" name="nombre" value="<?= old('nombre') ?>" placeholder="Ingresa nombre producto  "/>
+                    <input class="form-control" required type="text" name="nombre" value="<?= old('nombre') ?>" placeholder="Ingresa nombre producto"/>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="categoria">Categoria</label>
-                <input class="form-control" required type="text" name="categoria" value="<?= old('categoria') ?>" placeholder="Ingresa categoria"/>
+            <div class="form-group row">
+                <div class="col">
+                    <label for="precio_venta">Precio venta</label>
+                    <input class="form-control" required type="text" name="precio_venta" value="<?= old('precio_venta') ?>" placeholder="Ingresa precio venta"/>
+                </div>
+                <div class="col">
+                    <label for="precio_compra">Precio compra</label>
+                    <input class="form-control" required type="text" name="precio_compra" value="<?= old('precio_compra') ?>" placeholder="Ingresa precio compra"/>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="stock">Stock</label>
-                <input class="form-control" required type="int" name="stock" value="<?= old('stock') ?>"  placeholder="Ingresa stock"/>
+            <div class="form-group row">
+                <div class="col">
+                    <label for="existencias">Existencias</label>
+                    <input class="form-control" required type="text" name="existencias" value="<?= old('existencias') ?>" placeholder="Ingresa existencias"/>
+                </div>
+                <div class="col">
+                    <label for="stock_minimo">Stock minimo</label>
+                    <input class="form-control" required type="text" name="stock_minimo" value="<?= old('stock_minimo') ?>" placeholder="Ingresa stock minimo"/>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="precio">Precio</label>
-                <input class="form-control" required type="int" name="precio" value="<?= old('precio') ?>" placeholder="Ingresa precio" />
-            </div>
+            <div class="form-group row">
+                <div class="col">
+                    <label for="inventariable">Inventariable</label>
+                    <input class="form-control" required type="text" name="inventariable" value="<?= old('inventariable') ?>" placeholder="Ingresa inventariable"/>
+                </div>
+
+            <div class="form-group row">
+            <div class="col">
+                    <label for="unidades">Unidades</label>
+                    <select class="form-control" name="unidades" id="unidades">
+                        <option value="0">Seleccione una unidad</option>
+                        <?php foreach ($unidades as $unidade): ?>
+                            <option value="<?= $unidade['id'] ?>"><?= $unidade['nombre'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            <div class="col">
+                    <label for="categoria">Categoria</label>
+                    <select class="form-control" name="categoria" id="categoria">
+                        <option value="0">Seleccione una categoria</option>
+                        <?php foreach ($categorias as $categoria): ?>
+                            <option value="<?= $categoria['id'] ?>"><?= $categoria['nombre'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
             <div class="text-right">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cerrar</button>
                 <button type="submit" class="btn btn-primary" name="Button"><i class="fas fa-plus-circle"></i> Agregar producto</button>
