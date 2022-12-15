@@ -5,6 +5,8 @@ use CodeIgniter\Controller;
 use Config\Email;
 use Config\Services;
 use App\Models\ProductoModel;
+use App\Models\CategoriaModel;
+use App\Models\UnidadesModel;
 use App\Models\LogsModel;
 
 class ProductoController extends Controller
