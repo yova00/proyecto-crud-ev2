@@ -31,9 +31,14 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Auth\LoginController::login');
+/*------------------------------------------------------*/
 $routes->get('/unidades', 'Unidades::index');
+/* Agregar e insertar */
 $routes->get('/unidades/nuevo', 'Unidades::nuevo');
 $routes->post('/unidades/insertar', 'Unidades::insertar');
+
+
+
 
 
 
