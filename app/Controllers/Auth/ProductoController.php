@@ -56,10 +56,10 @@ class ProductoController extends Controller
 		$countproductos = $productos->countAll(); 
 
 		// count all active producto in the last 30 days
-		$newproductos = $productos->like("created_at", $ym)->countAllResults(); 
+		$newproductos = $productos->like("fecha_creada", $ym)->countAllResults(); 
 
 		// count all active productos
-		$activeproductos = $productos->where('active', 1)->countAllResults(); 
+		$activeproductos = $productos->where('activo', 1)->countAllResults(); 
 
 		// calculate active productos in how many percents
 		$percentofactiveproductos = ($activeproductos / $countproductos) * 100;
@@ -92,7 +92,7 @@ class ProductoController extends Controller
 
 		$producto = [
 			'id_p'  	=> $id,
-			'active'  	=> 1,
+			'activo'  	=> 1,
 		];
 
 		if (! $productos->save($producto)) {
@@ -128,7 +128,7 @@ class ProductoController extends Controller
 			'stock'	=> 'required|integer',
 			'categoria'	=> 'required|alpha_space|min_length[2]',
             'precio'	=> 'required|integer',
-			'active'	=> 'required|integer',
+			'activo'	=> 'required|integer',
 		];
 
 		if (! $this->validate($rules)) {
@@ -143,7 +143,7 @@ class ProductoController extends Controller
 			'stock' 	=> $this->request->getPost('stock'),
 			'categoria' 	=> $this->request->getPost('categoria'),
             'precio' 	=> $this->request->getPost('precio'),
-			'active' 	=> $this->request->getPost('active')
+			'activo' 	=> $this->request->getPost('activo')
 		];
 
 		if (! $productos->save($producto)) {

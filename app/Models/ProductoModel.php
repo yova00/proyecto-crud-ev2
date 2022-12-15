@@ -11,12 +11,12 @@ class ProductoModel extends Model
 
 	// this happens first, model removes all other fields from input data
 	protected $allowedFields = [
-		'nombre', 'stock', 'categoria','precio', 'created_at', 'updated_at', 'deleted_at'
+		'nombre', 'stock', 'categoria','precio', 'fecha_creada', 'activo', 'fecha_edit', 'deleted_at'
 	];
 
 	protected $useTimestamps = true;
-	protected $createdField  = 'created_at';
-	protected $updatedField  = 'updated_at';
+	protected $createdField  = 'fecha_creada';
+	protected $updatedField  = 'fecha_edit';
 	protected $dateFormat  	 = 'datetime';
 
 	protected $validationRules = [];
@@ -40,11 +40,11 @@ class ProductoModel extends Model
 			'stock'	=> 'required|integer',
 			'categoria'	=> 'required|alpha_space|min_length[2]',
             'precio'	=> 'required|integer',
-			'active'	=> 'required|integer',
+			'activo'	=> 'required|integer',
 		],
 		'enableproducto' => [
 			'id_p'	=> 'required|is_natural',
-			'active'	=> 'required|integer'
+			'activo'	=> 'required|integer'
 		]
 	];
 
