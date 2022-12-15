@@ -32,15 +32,6 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Auth\LoginController::login');
 /*------------------------------------------------------*/
-$routes->get('/unidades', 'Unidades::index');
-/* Agregar e insertar */
-$routes->get('/unidades/nuevo', 'Unidades::nuevo');
-$routes->post('/insertar', 'Unidades::insertar');
-/* Editar y actualizar */
-$routes->get('/unidades/editar/(:num)', 'Unidades::editar/$1');
-$routes->post('/unidades/actualizar', 'Unidades::actualizar');
-/* Eliminar */
-$routes->get('/unidades/eliminar/(:num)', 'Unidades::eliminar/$1');
 
 
 
@@ -119,6 +110,19 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->get('ventas/delete/(:num)', 'Auth\VentaController::delete'); // new
     $routes->post('ventas/create-venta', 'Auth\VentaController::createventa');
     $routes->get('ventas/logs', 'Auth\VentaController::ventaLogs', ['as' => 'ventalogs']); // new
+
+
+    #unidades
+    $routes->get('unidades', 'Auth\UnidadesController::unidades', ['as' => 'unidades']); // new
+    $routes->get('unidades/enable/(:num)', 'Auth\UnidadesController::enable'); // new
+    $routes->get('unidades/edit/(:num)', 'Auth\UnidadesController::edit'); // new
+    $routes->post('unidades/update-unidad', 'Auth\UnidadesController::update'); // new
+    $routes->get('unidades/delete/(:num)', 'Auth\UnidadesController::delete'); // new
+    $routes->post('unidades/create-unidad', 'Auth\UnidadesController::createunidad');
+    $routes->get('unidades/logs', 'Auth\UnidadesController::unidadLogs', ['as' => 'unidadlogs']); // new
+    
+    
+
 
 });
 

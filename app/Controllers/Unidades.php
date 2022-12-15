@@ -34,9 +34,17 @@ class Unidades extends BaseController
 
     public function insertar()
     {
+
+        $unidades = new UnidadesModel();
+        $unidades->setValidationRules($getRule);
+
         $this->unidades->save(['nombre' => $this->request->getPost('nombre'),
                                 'nombre_corto' => $this->request->getPost('nombre_corto')]);
-        return redirect()->to(site_url('/unidades'));
+        if (! $unidades->save($unidades)) {
+			return redirect()->back()->withInput()->with('errors', $unidades->errors());
+        }
+
+        return redirect()->back()->with('Aceptado', 'Se ha ingresado un producto nuevo.');
     }
 
 }
