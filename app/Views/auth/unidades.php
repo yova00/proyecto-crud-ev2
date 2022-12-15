@@ -1,11 +1,21 @@
 <!-- load main layout with datatable -->
 <?= $this->extend('auth/layouts/default-table') ?>
 
+
+
+
+
+
 <!-- load modals -->
 <?= $this->section('modals') ?>
 
+
+
     <!-- create producto modal form -->
     <?= view('App\Views\auth\modals\add-unidades') ?>
+
+
+
 
 <?= $this->endSection() ?>
 
