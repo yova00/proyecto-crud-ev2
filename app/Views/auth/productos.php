@@ -51,37 +51,48 @@
             <table width="100%" class="table table-hover" id="dataTables-table" data-order='[[ 0, "asc" ]]'>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Categoria</th>
-                        <th>Stock</th>
-                        <th>Precio</th>
-                        <th>Estado</th>
+                      <th>id</th>
+                      <th>codigo</th>
+                      <th>nombre</th>
+                      <th>precio_venta</th>
+                      <th>precio_compra</th>
+                      <th>existencias</th>
+                      <th>stock_minimo</th>
+                      <th>inventariable</th>
+                      <th>id_unidades</th>
+                      <th>id_categoria</th>
+
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($data as $item):?>
                     <tr>
-                        <td><?= $item['id_p'] ?></td>
+   
+                        <td><?= $item['id'] ?></td>
+                        <td><?= $item['codigo'] ?></td>
                         <td><?= $item['nombre'] ?></td>
-                        <td><?= $item['categoria'] ?></td>
-                        <td><?= $item['stock'] ?></td>
-                        <td><?= $item['precio'] ?></td>
+                        <td><?= $item['precio_venta'] ?></td>
+                        <td><?= $item['precio_compra'] ?></td>
+                        <td><?= $item['existencias'] ?></td>
+                        <td><?= $item['stock_minimo'] ?></td>
+                        <td><?= $item['inventariable'] ?></td>
+                        <td><?= $item['id_unidades'] ?></td>
+                        <td><?= $item['id_categoria'] ?></td>
                         <td>
-                            <?php if ($item['active'] == 1) : ?>
+                            <?php if ($item['activo'] == 1) : ?>
                                 Habilitado
                             <?php else : ?>
                                 Deshabilitado
                             <?php endif ?>
                         </td>
                         <td class="text-right">
-                            <?php if ($item['active'] == 0) : ?>
-                                <a class="btn btn-outline-secondary btn-sm" href="<?= site_url('productos/enable/').$item['id_p'] ?>"><i class="fas fa-user-check"></i> Habilitar</a>
+                            <?php if ($item['activo'] == 0) : ?>
+                                <a class="btn btn-outline-secondary btn-sm" href="<?= site_url('productos/enable/').$item['id'] ?>"><i class="fas fa-user-check"></i> Habilitar</a>
                             <?php endif ?>
 
-                            <a class="btn btn-outline-secondary btn-sm" href="<?= site_url('productos/edit/').$item['id_p'] ?>"><i class="fas fa-edit"></i> Editar</a>
-                            <a class="btn btn-outline-secondary btn-sm" href="<?= site_url('productos/delete/').$item['id_p'] ?>"><i class="fas fa-trash"></i> Eliminar</a>
+                            <a class="btn btn-outline-secondary btn-sm" href="<?= site_url('productos/edit/').$item['id'] ?>"><i class="fas fa-edit"></i> Editar</a>
+                            <a class="btn btn-outline-secondary btn-sm" href="<?= site_url('productos/delete/').$item['id'] ?>"><i class="fas fa-trash"></i> Eliminar</a>
                         </td>
                     </tr>
                     <?php endforeach;?>

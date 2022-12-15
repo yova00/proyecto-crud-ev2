@@ -91,7 +91,7 @@ class ProductoController extends Controller
 		$productos = new ProductoModel();
 
 		$producto = [
-			'id_p'  	=> $id,
+			'id'  	=> $id,
 			'activo'  	=> 1,
 		];
 
@@ -111,7 +111,7 @@ class ProductoController extends Controller
 		$productos = new ProductoModel();
 
 		// get producto data using the id
-		$producto = $productos->where('id_p', $id)->first(); 
+		$producto = $productos->where('id', $id)->first(); 
 
 		// load the view with session data
 		return view('auth/edits/edit-producto', [
@@ -123,12 +123,16 @@ class ProductoController extends Controller
 	public function update()
 	{
 		$rules = [
-			'id_p'	=> 'required|is_natural',
-			'nombre'	=> 'required|alpha_space|min_length[2]',
-			'stock'	=> 'required|integer',
-			'categoria'	=> 'required|alpha_space|min_length[2]',
-            'precio'	=> 'required|integer',
-			'activo'	=> 'required|integer',
+			'id'	=> 'required|integer',
+			'codigo' 		=> 'required|alpha_space|min_length[2]',
+			'nombre' 			=> 'required|alpha_space|min_length[2]',
+			'precio_venta' 			=> 'required|alpha_space|min_length[2]',
+			'precio_compra' 			=> 'required|alpha_space|min_length[2]',
+			'existencias' 			=> 'required|alpha_space|min_length[2]',
+			'stock_minimo' 			=> 'required|alpha_space|min_length[2]',
+			'inventariable' 			=> 'required|alpha_space|min_length[2]',
+			'id_unidades' 			=> 'required|alpha_space|min_length[2]',
+			'id_categoria' 			=> 'required|alpha_space|min_length[2]',
 		];
 
 		if (! $this->validate($rules)) {
@@ -138,12 +142,16 @@ class ProductoController extends Controller
 		$productos = new ProductoModel();
 
 		$producto = [
-			'id_p'  	=> $this->request->getPost('id_p'),
-			'nombre' 	=> $this->request->getPost('nombre'),
-			'stock' 	=> $this->request->getPost('stock'),
-			'categoria' 	=> $this->request->getPost('categoria'),
-            'precio' 	=> $this->request->getPost('precio'),
-			'activo' 	=> $this->request->getPost('activo')
+			'id'  	=> $this->request->getPost('id'),
+			'codigo'  	=> $this->request->getPost('codigo'),
+			'nombre'  	=> $this->request->getPost('nombre'),
+			'precio_venta'  	=> $this->request->getPost('precio_venta'),
+			'precio_compra'  	=> $this->request->getPost('precio_compra'),
+			'existencias'  	=> $this->request->getPost('existencias'),
+			'stock_minimo'  	=> $this->request->getPost('stock_minimo'),
+			'inventariable'  	=> $this->request->getPost('inventariable'),
+			'id_unidades'  	=> $this->request->getPost('id_unidades'),
+			'id_categoria'  	=> $this->request->getPost('id_categoria'),
 		];
 
 		if (! $productos->save($producto)) {
@@ -177,10 +185,15 @@ class ProductoController extends Controller
 		$productos->setValidationRules($getRule);
 		
         $producto = [
-            'nombre'          	=> $this->request->getPost('nombre'),
-            'stock'          	=> $this->request->getPost('stock'),
-            'categoria'          	=> $this->request->getPost('categoria'),
-            'precio'          	=> $this->request->getPost('precio'),
+            'codigo'  	=> $this->request->getPost('codigo'),
+			'nombre'  	=> $this->request->getPost('nombre'),
+			'precio_venta'  	=> $this->request->getPost('precio_venta'),
+			'precio_compra'  	=> $this->request->getPost('precio_compra'),
+			'existencias'  	=> $this->request->getPost('existencias'),
+			'stock_minimo'  	=> $this->request->getPost('stock_minimo'),
+			'inventariable'  	=> $this->request->getPost('inventariable'),
+			'id_unidades'  	=> $this->request->getPost('id_unidades'),
+			'id_categoria'  	=> $this->request->getPost('id_categoria'),
         ];
 
         if (! $productos->save($producto)) {

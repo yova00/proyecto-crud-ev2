@@ -5,13 +5,13 @@ use CodeIgniter\Model;
 class ProductoModel extends Model
 {
 	protected $table      = 'productos';
-	protected $primaryKey = 'id_p';
+	protected $primaryKey = 'id';
 	protected $returnType = 'array';
 	protected $useSoftDeletes = false;
 
 	// this happens first, model removes all other fields from input data
 	protected $allowedFields = [
-		'nombre', 'stock', 'categoria','precio', 'fecha_creada', 'activo', 'fecha_edit', 'deleted_at'
+		'codigo', 'nombre', 'precio_venta','precio:compra', 'existencias','stock_minimo', 'inventariable','id_unidades','id_categoria', 'activo', 'fecha_creada','fecha_edit',
 	];
 
 	protected $useTimestamps = true;
@@ -24,22 +24,30 @@ class ProductoModel extends Model
 	// we need different rules for registration, account update, etc
 	protected $dynamicRules = [
 		'registration' => [
-			'nombre' 		=> 'required|alpha_space|min_length[2]',
-			'stock' 			=> 'required|alpha_space|min_length[2]',
-			'categoria' 				=> 'required|alpha_space|min_length[2]',
-            'precio' 				=> 'required|int',
-			
+			'codigo' 		=> 'required|alpha_space|min_length[2]',
+			'nombre' 			=> 'required|alpha_space|min_length[2]',
+			'precio_venta' 			=> 'required|alpha_space|min_length[2]',
+			'precio_compra' 			=> 'required|alpha_space|min_length[2]',
+			'existencias' 			=> 'required|alpha_space|min_length[2]',
+			'stock_minimo' 			=> 'required|alpha_space|min_length[2]',
+			'inventariable' 			=> 'required|alpha_space|min_length[2]',
+			'id_unidades' 			=> 'required|alpha_space|min_length[2]',
+			'id_categoria' 			=> 'required|alpha_space|min_length[2]',
 		],
 		'updateAccount' => [
-			'id_p'	=> 'required|is_natural',
+			'id'	=> 'required|is_natural',
 			'nombre'	=> 'required|alpha_space|min_length[2]'
 		],
 		'updateProfile' => [
-			'id_p'	=> 'required|is_natural',
+			'id'	=> 'required|is_natural',
 			'nombre'	=> 'required|alpha_space|min_length[2]',
-			'stock'	=> 'required|integer',
-			'categoria'	=> 'required|alpha_space|min_length[2]',
-            'precio'	=> 'required|integer',
+			'precio_venta'	=> 'required|alpha_space|min_length[2]',
+			'precio_compra'	=> 'required|alpha_space|min_length[2]',
+			'existencias'	=> 'required|alpha_space|min_length[2]',
+			'stock_minimo'	=> 'required|alpha_space|min_length[2]',
+			'inventariable'	=> 'required|alpha_space|min_length[2]',
+			'id_unidades'	=> 'required|alpha_space|min_length[2]',
+			'id_categoria'	=> 'required|alpha_space|min_length[2]',
 			'activo'	=> 'required|integer',
 		],
 		'enableproducto' => [
