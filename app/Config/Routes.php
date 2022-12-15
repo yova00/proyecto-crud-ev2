@@ -38,6 +38,16 @@ $routes->get('/', 'Auth\LoginController::login');
 
 
 
+/* Calculator */
+
+$routes->get('/calculator', 'CalculatorController::index');
+
+
+
+
+
+
+
 
 /**
  * --------------------------------------------------------------------

@@ -62,7 +62,7 @@
             </ul>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('calculator') ?>">Calcular IVA</a>
+                <a class="nav-link" href="<?= site_url('/calculator') ?>">Calcular IVA</a>
             </li>
 
             <li class="nav-item">
