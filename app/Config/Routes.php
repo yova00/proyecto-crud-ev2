@@ -36,6 +36,11 @@ $routes->get('/unidades', 'Unidades::index');
 /* Agregar e insertar */
 $routes->get('/unidades/nuevo', 'Unidades::nuevo');
 $routes->post('/unidades/insertar', 'Unidades::insertar');
+/* Editar y actualizar */
+$routes->get('/unidades/editar/(:num)', 'Unidades::editar/$1');
+$routes->post('/unidades/actualizar', 'Unidades::actualizar');
+/* Eliminar */
+$routes->get('/unidades/eliminar/(:num)', 'Unidades::eliminar/$1');
 
 
 
