@@ -61,8 +61,8 @@
                       <th>inventariable</th>
                       <th>id_unidades</th>
                       <th>id_categoria</th>
-
-                        <th></th>
+                      <th>Activo</th>
+                      <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -77,7 +77,7 @@
                         <td><?= $item['existencias'] ?></td>
                         <td><?= $item['stock_minimo'] ?></td>
                         <td><?= $item['inventariable'] ?></td>
-                        <td><?= $item['id_unidades'] ?></td>
+                        <td><?= $item['id_unidad'] ?></td>
                         <td><?= $item['id_categoria'] ?></td>
                         <td>
                             <?php if ($item['activo'] == 1) : ?>
