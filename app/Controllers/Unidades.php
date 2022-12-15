@@ -36,7 +36,7 @@ class Unidades extends BaseController
     {
         $this->unidades->save(['nombre' => $this->request->getPost('nombre'),
                                 'nombre_corto' => $this->request->getPost('nombre_corto')]);
-        return redirect()->to(site_url().'/unidades');
+        return redirect()->to(site_url('/unidades'));
     }
 
 }

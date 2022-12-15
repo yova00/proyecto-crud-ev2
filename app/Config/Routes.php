@@ -35,7 +35,7 @@ $routes->get('/', 'Auth\LoginController::login');
 $routes->get('/unidades', 'Unidades::index');
 /* Agregar e insertar */
 $routes->get('/unidades/nuevo', 'Unidades::nuevo');
-$routes->post('/unidades/insertar', 'Unidades::insertar');
+$routes->post('/insertar', 'Unidades::insertar');
 /* Editar y actualizar */
 $routes->get('/unidades/editar/(:num)', 'Unidades::editar/$1');
 $routes->post('/unidades/actualizar', 'Unidades::actualizar');
