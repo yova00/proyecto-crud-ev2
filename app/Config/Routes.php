@@ -47,6 +47,16 @@ $routes->get('/unidades/eliminar/(:num)', 'Unidades::eliminar/$1');
 
 
 
+/* Calculator */
+
+$routes->get('/calculator', 'CalculatorController::index');
+
+
+
+
+
+
+
 
 /**
  * --------------------------------------------------------------------
