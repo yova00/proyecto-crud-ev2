@@ -130,8 +130,31 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->get('unidades/delete/(:num)', 'Auth\UnidadesController::delete'); // new
     $routes->post('unidades/create-unidad', 'Auth\UnidadesController::createunidad');
     $routes->get('unidades/logs', 'Auth\UnidadesController::unidadLogs', ['as' => 'unidadlogs']); // new
+
+    #categorias
+    $routes->get('categorias', 'Auth\CategoriasController::categorias', ['as' => 'categorias']); // new
+    $routes->get('categorias/enable/(:num)', 'Auth\CategoriasController::enable'); // new
+    $routes->get('categorias/edit/(:num)', 'Auth\CategoriasController::edit'); // new
+    $routes->post('categorias/update-categoria', 'Auth\CategoriasController::update'); // new
+    $routes->get('categorias/delete/(:num)', 'Auth\CategoriasController::delete'); // new
+    $routes->post('categorias/create-categoria', 'Auth\CategoriasController::createcategoria');
+    $routes->get('categorias/logs', 'Auth\CategoriasController::categoriaLogs', ['as' => 'categorialogs']); // new
     
     
+
+
+
+   /* 
+    $routes->get('categorias', 'Auth\CategoriaController::categorias', ['as' => 'categorias']); // new
+    $routes->get('categorias/enable/(:num)', 'Auth\CategoriaController::enable'); // new
+    $routes->get('categorias/edit/(:num)', 'Auth\CategoriaController::edit'); // new
+    $routes->post('categorias/update-categoria', 'Auth\CategoriaController::update'); // new
+    $routes->get('categorias/delete/(:num)', 'Auth\CategoriaController::delete'); // new
+    $routes->post('categorias/create-categoria', 'Auth\CategoriaController::createcategoria');
+    $routes->get('categorias/logs', 'Auth\CategoriaController::categoriaLogs', ['as' => 'categorialogs']); // new
+
+    
+    */
 
 
 });
