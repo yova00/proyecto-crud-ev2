@@ -36,11 +36,13 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Calcular IVA</h5>
-                    <form action="calcular">
+                    <form action="calcular" >
+                        <label for="calcular">Ingrese el valor a calcular</label>
                         <input type="text" name="calcular" autocomplete="off">
                         <button type="submit" class="btn btn-primary">Calcular</button>
-                        <?php if (isset($calcular)): ?>
-                            <p class="mt-4">El IVA es: <?= $calcular ?></p>
+                        
+                        <?php if (isset($resultado)): ?>
+                            <p class="mt-4">El IVA es: <?= $resultado ?></p>
                         <?php endif; ?>  
                     </form>
                 </div>
