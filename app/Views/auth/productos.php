@@ -73,7 +73,7 @@
                         <td><?= $item['codigo'] ?></td>
                         <td><?= $item['nombre'] ?></td>
                         <td><?= $item['precio_venta'] ?></td>
-                        <td><?= $item['precio_compra'] ?></td>
+                        <td><?= $item['precio_compra'] ?></td> 
                         <td><?= $item['existencias'] ?></td>
                         <td><?= $item['stock_minimo'] ?></td>
                         <td><?= $item['inventariable'] ?></td>

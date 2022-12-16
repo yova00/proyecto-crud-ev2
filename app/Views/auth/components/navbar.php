@@ -31,14 +31,14 @@
 
             <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
               <li class="nav-item dropdown">
-                <a class="nav-item nav-link mr-md-2" href="#" id="bd-versions" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-item nav-link mr-md-2" href="<?= site_url('ventas') ?>" id="bd-versions" aria-haspopup="true" aria-expanded="false">
                   <span class="text-capitalize">Ventas</span>
                 </a>
               </li>
             </ul>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('calculator') ?>">Calcular IVA</a>
+                <a class="nav-link" href="<?= site_url('clientes') ?>">Clientes</a>
             </li>
 
             <li class="nav-item">

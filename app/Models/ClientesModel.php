@@ -2,7 +2,7 @@
 
 use CodeIgniter\Model;
 
-class ProductoModel extends Model
+class ClientesModel extends Model
 {
 	protected $table      = 'clientes';
 	protected $primaryKey = 'id';
@@ -11,12 +11,12 @@ class ProductoModel extends Model
 
 	// this happens first, model removes all other fields from input data
 	protected $allowedFields = [
-		'nombre', 'direccion', 'categoria','precio', 'created_at', 'updated_at', 'deleted_at'
+		'nombre', 'direccion', 'telefono','correo','activo', 'fecha_creada', 'fecha_edit',
 	];
 
 	protected $useTimestamps = true;
-	protected $createdField  = 'created_at';
-	protected $updatedField  = 'updated_at';
+	protected $createdField  = 'fecha_creada';
+	protected $updatedField  = 'fecha_edit';
 	protected $dateFormat  	 = 'datetime';
 
 	protected $validationRules = [];
@@ -24,27 +24,26 @@ class ProductoModel extends Model
 	// we need different rules for registration, account update, etc
 	protected $dynamicRules = [
 		'registration' => [
-			'nombre' 		=> 'required|alpha_space|min_length[2]',
-			'stock' 			=> 'required|alpha_space|min_length[2]',
-			'categoria' 				=> 'required|alpha_space|min_length[2]',
-            'precio' 				=> 'required|int',
-			
+			'nombre'	=> 'required|alpha_space|min_length[2]',
+			'direccion'	=> 'required|alpha_space|min_length[2]',
+			'telefono'	=> 'required|min_length[2]',
+			'correo'	=> 'required|min_length[2]',
 		],
 		'updateAccount' => [
-			'id_p'	=> 'required|is_natural',
-			'nombre'	=> 'required|alpha_space|min_length[2]'
+			'id'	=> 'required|is_natural',
+			'nombre'	=> 'required|alpha_space|min_length[2]',
 		],
 		'updateProfile' => [
-			'id_p'	=> 'required|is_natural',
+			'id'	=> 'required|is_natural',
 			'nombre'	=> 'required|alpha_space|min_length[2]',
-			'stock'	=> 'required|integer',
-			'categoria'	=> 'required|alpha_space|min_length[2]',
-            'precio'	=> 'required|integer',
-			'active'	=> 'required|integer',
+			'direccion'	=> 'required|alpha_space|min_length[2]',
+			'telefono'	=> 'required|alpha_space|min_length[2]',
+			'correo'	=> 'required|alpha_space|min_length[2]',
+			'activo'	=> 'required|integer',
 		],
 		'enableproducto' => [
-			'id_p'	=> 'required|is_natural',
-			'active'	=> 'required|integer'
+			'id'	=> 'required|is_natural',
+			'activo'	=> 'required|integer'
 		]
 	];
 

@@ -183,8 +183,15 @@ class ProductoController extends Controller
 
 		// save new producto, validation happens in the model
 		$productos = new ProductoModel();
+		$unidade = new UnidadesModel();
+		$categorias = new CategoriaModel();
+
 		$getRule = $productos->getRule('registration');
 		$productos->setValidationRules($getRule);
+
+		$unidade = [
+			'id'  	=> $this->request->getPost('id'),
+        ];
 		
         $producto = [
             'codigo'  	=> $this->request->getPost('codigo'),
@@ -194,7 +201,7 @@ class ProductoController extends Controller
 			'existencias'  	=> $this->request->getPost('existencias'),
 			'stock_minimo'  	=> $this->request->getPost('stock_minimo'),
 			'inventariable'  	=> $this->request->getPost('inventariable'),
-			'id_unidades'  	=> $this->request->getPost('id_unidades'),
+			'id_unidades'  	=> $this->request->getPost($unidade),
 			'id_categoria'  	=> $this->request->getPost('id_categoria'),
         ];
 
