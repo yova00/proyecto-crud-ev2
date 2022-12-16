@@ -54,6 +54,14 @@ class ProductoController extends Controller
 		// getall productos
 		$allproductos = $productos->findAll(); 
 
+		//categorias
+		$categoria = new CategoriaModel();
+		$allcategoria = $categoria->findAll();
+
+		//unidades
+		$unidades = new UnidadesModel();
+		$allunidades = $unidades->findAll();
+
 		// count all rows in productos table
 		$countproductos = $productos->countAll(); 
 
@@ -69,7 +77,9 @@ class ProductoController extends Controller
 		// load the view with session data
 		return view('auth/productos', [
 				'productoData' => $this->session->productoData, 
-				'data' => $allproductos, 
+				'categorias' => $allcategoria, 
+				'productos' => $allproductos,
+				'unidades' => $allunidades,
 				'productocount' => $countproductos, 
 				'newproductos' => $newproductos,
 				'percentofactiveproductos' => $percentofactiveproductos

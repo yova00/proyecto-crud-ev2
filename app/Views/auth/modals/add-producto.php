@@ -72,6 +72,8 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cerrar</button>
                 <button type="submit" class="btn btn-primary" name="Button"><i class="fas fa-plus-circle"></i> Agregar producto</button>
             </div>
+            </div>
+            </div>
         </form>
       </div>
     </div>
