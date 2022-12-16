@@ -218,6 +218,8 @@ class ProductoController extends Controller
 
 	public function createproducto()
 	{
+
+		/* */
 		helper('text');
 
 		// save new producto, validation happens in the model
