@@ -8,9 +8,12 @@ class CalculatorController extends BaseController
     public function calcular()
     {
         $calcular = $this->request->getVar('calcular');
-        $calcular = $calcular * 0.19;
+        $calcular = $calcular * 0.81;
         
-        echo $calcular;
+        $resultado = $calcular;
+
+        echo $resultado;
+        
         
     }
 }
