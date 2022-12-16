@@ -7,7 +7,7 @@
 
 
 <!-- load modals -->
-<?= $this->section('modals') ?>
+x
 
 
 
