@@ -7,7 +7,7 @@
 
 
 <!-- load modals -->
-x
+<?= $this->section('modals') ?>
 
 
 
@@ -18,6 +18,7 @@ x
 
 
 <?= $this->endSection() ?>
+
 
 <!-- load main content -->
 <?= $this->section('main') ?>
