@@ -127,7 +127,7 @@ class ClientesController extends Controller
 			'nombre'	=> 'required|alpha_space|min_length[2]',
 			'direccion'	=> 'required|min_length[2]',
 			'telefono'	=> 'required|min_length[2]',
-			'correo'	=> 'required|min_length[2]',
+			'correo'	=> 'required|valid_email',
 			
 		];
 
