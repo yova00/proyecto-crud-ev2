@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class ClientesModel extends Model
 {
-	protected $table      = 'unidades';
+	protected $table      = 'clientes';
 	protected $primaryKey = 'id';
 	protected $returnType = 'array';
 	protected $useSoftDeletes = false;
@@ -26,18 +26,12 @@ class ClientesModel extends Model
 		'registration' => [
 			'nombre'	=> 'required|alpha_space|min_length[2]',
 			'direccion'	=> 'required|alpha_space|min_length[2]',
-			'telefono'	=> 'required|alpha_space|min_length[2]',
-			'correo'	=> 'required|alpha_space|min_length[2]',
-			'activo'	=> 'required|integer',
-			
+			'telefono'	=> 'required|min_length[2]',
+			'correo'	=> 'required|min_length[2]',
 		],
 		'updateAccount' => [
 			'id'	=> 'required|is_natural',
 			'nombre'	=> 'required|alpha_space|min_length[2]',
-			'direccion'	=> 'required|alpha_space|min_length[2]',
-			'telefono'	=> 'required|alpha_space|min_length[2]',
-			'correo'	=> 'required|alpha_space|min_length[2]',
-			'activo'	=> 'required|integer',
 		],
 		'updateProfile' => [
 			'id'	=> 'required|is_natural',

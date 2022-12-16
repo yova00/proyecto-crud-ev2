@@ -125,8 +125,10 @@ class ClientesController extends Controller
 		$rules = [
 			'id'	=> 'required|is_natural',
 			'nombre'	=> 'required|alpha_space|min_length[2]',
-			'nombre_corto'	=> 'required|alpha_space|min_length[2]',
-			'activo'	=> 'required|integer',
+			'direccion'	=> 'required|min_length[2]',
+			'telefono'	=> 'required|min_length[2]',
+			'correo'	=> 'required|min_length[2]',
+			
 		];
 
 		if (! $this->validate($rules)) {
@@ -138,8 +140,10 @@ class ClientesController extends Controller
 		$cliente = [
 			'id'  	=> $this->request->getPost('id'),
 			'nombre' 	=> $this->request->getPost('nombre'),
-			'nombre_corto' 	=> $this->request->getPost('nombre_corto'),
-			'activo' 	=> $this->request->getPost('activo')
+			'direccion'          	=> $this->request->getPost('direccion'),
+			'telefono'          	=> $this->request->getPost('telefono'),
+			'correo'          	=> $this->request->getPost('correo'),
+			
 		];
 
 		if (! $clientes->save($cliente)) {
@@ -174,7 +178,9 @@ class ClientesController extends Controller
 		
         $cliente = [
             'nombre'          	=> $this->request->getPost('nombre'),
-            'nombre_corto'          	=> $this->request->getPost('nombre_corto'),
+            'direccion'          	=> $this->request->getPost('direccion'),
+			'telefono'          	=> $this->request->getPost('telefono'),
+			'correo'          	=> $this->request->getPost('correo'),
         ];
 
         if (! $clientes->save($cliente)) {

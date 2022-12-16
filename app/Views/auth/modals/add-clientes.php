@@ -35,7 +35,7 @@
                     <label for="correo">Correo</label>
                     <input class="form-control" required type="text" name="correo" value="<?= old('correo') ?>" placeholder="Ingresa correo  "/>
                 </div>
-            </div>
+            </div>   
             <div class="text-right">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cerrar</button>
                 <button type="submit" class="btn btn-primary" name="Button"><i class="fas fa-plus-circle"></i> Agregar cliente</button>
