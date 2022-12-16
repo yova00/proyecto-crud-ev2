@@ -12,29 +12,22 @@
             <?= csrf_field() ?>
             <div class="form-group row">
                 <div class="col">
-                    <label for="firstname">Nombres</label>
+                    <label for="firstname">Folio</label>
                     <input class="form-control" required type="text" name="firstname" value="<?= old('firstname') ?>" placeholder="Ingresa nombres"/>
                 </div>
                 <div class="col">
-                    <label for="lastname">Apellidos</label>
+                    <label for="lastname">Total</label>
                     <input class="form-control" required type="text" name="lastname" value="<?= old('lastname') ?>" placeholder="Ingresa apellidos"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="name">Nombre de usuario</label>
-                <input class="form-control" required type="text" name="name" value="<?= old('name') ?>" placeholder="Ingresa nombre de usuario"/>
+                <label for="name">Cliente</label>
+                <input class="form-control" required type="text" name="text" value="<?= old('name') ?>" placeholder="Ingresa nombre de usuario"/>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input class="form-control" required type="email" name="email" value="<?= old('email') ?>" placeholder="Ingresa correo electronico"/>
-            </div>
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input class="form-control" required type="password" name="password" value="" placeholder="Ingresa contraseña" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" required type="password" name="password_confirm" value="" placeholder="Repite la contraseña" />
+                <label for="forma_pago">Forma de pago</label>
+                <input class="form-control" required type="text" name="text" value="<?= old('email') ?>" placeholder="Ingresa correo electronico"/>
             </div>
 
             <div class="text-right">
