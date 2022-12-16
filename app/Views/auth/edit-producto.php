@@ -19,16 +19,24 @@
                 <input class="form-control" required type="text" name="nombre" value="<?= $producto['nombre'] ?>" />
             </div>
             <div class="form-group">
-                <label for="categoria">categoria</label>
-                <input class="form-control" required type="text" name="categoria" value="<?= $producto['categoria'] ?>" />
-            </div>
-            <div class="form-group">
                 <label for="stock">stock</label>
-                <input class="form-control" required type="int" name="stock" value="<?= $producto['stock'] ?>" />
+                <input class="form-control" required type="int" name="stock" value="<?= $producto['precio_venta'] ?>" />
             </div>
             <div class="form-group">
                 <label for="precio">precio</label>
-                <input class="form-control" required type="int" name="precio" value="<?= $producto['precio'] ?>" />
+                <input class="form-control" required type="int" name="precio" value="<?= $producto['precio_compra'] ?>" />
+            </div>
+            <div class="form-group">
+                <label for="precio">precio</label>
+                <input class="form-control" required type="int" name="precio" value="<?= $producto['existencias'] ?>" />
+            </div>
+            <div class="form-group">
+                <label for="precio">precio</label>
+                <input class="form-control" required type="int" name="precio" value="<?= $producto['stock_minimo'] ?>" />
+            </div>
+            <div class="form-group">
+                <label for="precio">precio</label>
+                <input class="form-control" required type="int" name="precio" value="<?= $producto['inventariable'] ?>" />
             </div>
             <div class="form-group">
                 <label for="active">Estado</label>

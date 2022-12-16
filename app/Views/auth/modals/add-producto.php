@@ -51,29 +51,6 @@
                     <input class="form-control" required type="text" name="inventariable" value="<?= old('inventariable') ?>" placeholder="Ingresa inventariable"/>
                 </div>
 
-
-            <!--<div class="col">
-                    <label for="unidades">Unidades</label>
-                    <select class="form-control" name="unidades" id="unidades">
-                        <option value="0">Seleccione una unidad</option>
-                        <?php foreach ($unidades as $unidade): ?>
-                            <option value="<?= $unidade['id'] ?>"><?= $unidade['nombre'] ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-            <div class="col">
-                <label for="categoria">Categoria</label>
-                <select class="form-control" name="categoria" id="categoria">
-                    <option value="0">Seleccione una categoria</option>
-                    <?php foreach ($categorias as $categoria): ?>
-                        <option value="<?= $categoria['id'] ?>"><?= $categoria['nombre'] ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            -->
-            
-            <div class="form-group row">
-            
                 <div class="text-right">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times-circle"></i> Cerrar</button>
                     <button type="submit" class="btn btn-primary" name="Button"><i class="fas fa-plus-circle"></i> Agregar producto</button>
