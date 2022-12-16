@@ -7,7 +7,17 @@
 </i>
       </div>
     </footer>
-
+    <style>
+    footer {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: white;
+}
+    </style>
+ 
     <script src="<?= base_url("vendor/jquery/jquery.min.js") ?>" type="text/javascript"></script>
     <script src="<?= base_url("vendor/bootstrap/js/bootstrap.bundle.min.js") ?>" type="text/javascript"></script>
 
