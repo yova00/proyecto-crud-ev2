@@ -238,8 +238,8 @@ class ProductoController extends Controller
 			'existencias'  	=> $this->request->getPost('existencias'),
 			'stock_minimo'  	=> $this->request->getPost('stock_minimo'),
 			'inventariable'  	=> $this->request->getPost('inventariable'),
-			'id_unidades'  	=> $this->request->getPost('id_unidades'),
-			'id_categoria'  	=> $this->request->getPost('id_categoria'),
+			'id_unidades'  	=> $this->request->getPost('unidades'),
+			'id_categoria'  	=> $this->request->getPost('categoria'),
         ];
 
         if (! $productos->save($producto)) {

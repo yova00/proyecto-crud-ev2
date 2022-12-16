@@ -40,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label for="unidades">unidades</label>
-                <input class="form-control" required type="int" name="unidades" value="<?= $unidades['id'] ?>" />
+                <input class="form-control" required type="int" name="unidades" value="<?= $producto['id_unidades'] ?>" />
             </div>
             <div class="form-group">
                 <label for="categoria">categoria</label>
