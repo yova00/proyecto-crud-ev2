@@ -66,7 +66,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($data as $item):?>
+                    <?php foreach ($productos as $item):?>
                     <tr>
    
                         <td><?= $item['id'] ?></td>
