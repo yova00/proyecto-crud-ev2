@@ -52,13 +52,11 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
+                        <th>Folio</th>
                         <th>Total</th>
-                        <th>+iva</th>
-                        <th>Estado</th>
+                        <th>Cliente</th>
+                        <th>Forma de pago</th>
+                        <th>Activo</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -66,12 +64,11 @@
                     <?php foreach ($data as $item):?>
                     <tr>
                         <td><?= $item['id_v'] ?></td>
-                        <td><?= $item['n_cliente'] ?></td>
-                        <td><?= $item['email'] ?></td>
-                        <td><?= $item['producto'] ?></td>
-                        <td><?= $item['cantidad'] ?></td>
+                        <td><?= $item['folio'] ?></td>
                         <td><?= $item['total'] ?></td>
-                        <td><?= $item['totaliva'] ?></td>
+                        <td><?= $item['id_cliente'] ?></td>
+                        <td><?= $item['forma_pago'] ?></td>
+                        <td><?= $item['active'] ?></td>
                         <td>
                             <?php if ($item['active'] == 1) : ?>
                                 Habilitado

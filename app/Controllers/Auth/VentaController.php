@@ -91,7 +91,7 @@ class VentaController extends Controller
 		$ventas = new VentaModel();
 
 		$venta = [
-			'id_p'  	=> $id,
+			'id_v'  	=> $id,
 			'active'  	=> 1,
 		];
 
@@ -111,7 +111,7 @@ class VentaController extends Controller
 		$ventas = new ventaModel();
 
 		// get venta data using the id
-		$venta = $ventas->where('id_p', $id)->first(); 
+		$venta = $ventas->where('id_v', $id)->first(); 
 
 		// load the view with session data
 		return view('auth/edits/edit-venta', [
@@ -123,11 +123,11 @@ class VentaController extends Controller
 	public function update()
 	{
 		$rules = [
-			'id_p'	=> 'required|is_natural',
-			'nombre'	=> 'required|alpha_space|min_length[2]',
-			'stock'	=> 'required|integer',
-			'categoria'	=> 'required|alpha_space|min_length[2]',
-            'precio'	=> 'required|integer',
+			'id_v'	=> 'required|is_natural',
+			'folio'	=> 'required|integer',
+			'total'	=> 'required|integer',
+            'id_cliente'	=> 'required|integer',
+			'forma_pago'	=> 'required|alpha_space|min_length[2]',
 			'active'	=> 'required|integer',
 		];
 
@@ -139,12 +139,10 @@ class VentaController extends Controller
 
 		$venta = [
 			'id_v'  	=> $this->request->getPost('id_v'),
-			'n_cliente' 	=> $this->request->getPost('n_cliente'),
-			'producto' 	=> $this->request->getPost('producto'),
-			'cantidad' 	=> $this->request->getPost('cantidad'),
+			'folio' 	=> $this->request->getPost('folio'),
             'total' 	=> $this->request->getPost('total'),
-			'totaliva' 	=> $this->request->getPost('totaliva'),
-			'email' 	=> $this->request->getPost('email'),
+			'id_cliente' 	=> $this->request->getPost('id_cliente'),
+			'forma_pago' 	=> $this->request->getPost('forma_pago'),
 			'active' 	=> $this->request->getPost('active')
 		];
 
@@ -180,12 +178,10 @@ class VentaController extends Controller
 		
         $venta = [
             'id_v'  	=> $this->request->getPost('id_v'),
-			'n_cliente' 	=> $this->request->getPost('n_cliente'),
-			'producto' 	=> $this->request->getPost('producto'),
-			'cantidad' 	=> $this->request->getPost('cantidad'),
+			'folio' 	=> $this->request->getPost('folio'),
             'total' 	=> $this->request->getPost('total'),
-			'totaliva' 	=> $this->request->getPost('totaliva'),
-			'email' 	=> $this->request->getPost('email'),
+			'id_cliente' 	=> $this->request->getPost('id_cliente'),
+			'forma_pago' 	=> $this->request->getPost('forma_pago'),
 			'active' 	=> $this->request->getPost('active')
         ];
 
