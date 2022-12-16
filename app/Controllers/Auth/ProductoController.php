@@ -73,6 +73,12 @@ class ProductoController extends Controller
 
 		// calculate active productos in how many percents
 		$percentofactiveproductos = ($activeproductos / $countproductos) * 100;
+
+		$cat = new CategoriaModel();
+		$uni = new UnidadesModel();
+
+		$categorias = $cat->findAll();
+		$unidades = $uni->findAll();
 		
 		// load the view with session data
 		return view('auth/productos', [
@@ -82,6 +88,8 @@ class ProductoController extends Controller
 				'unidades' => $allunidades,
 				'productocount' => $countproductos, 
 				'newproductos' => $newproductos,
+				'categorias' => $categorias,
+				'unidades' => $unidades,
 				'percentofactiveproductos' => $percentofactiveproductos
 			]);
 	}
@@ -121,9 +129,11 @@ class ProductoController extends Controller
 
 		// load producto model
 		$productos = new ProductoModel();
-
+		$categorias = new CategoriaModel();
+		$unidades = new UnidadesModel();
 		// get producto data using the id
 		$producto = $productos->where('id', $id)->first(); 
+		$unidade = $productos->where('id', $id)->first(); 
 
 		// load the view with session data
 		return view('auth/edits/edit-producto', [
@@ -134,22 +144,7 @@ class ProductoController extends Controller
 
 	public function update()
 	{
-		$rules = [
-			'id'	=> 'required|integer',
-			'codigo' 		=> 'required|alpha_space|min_length[2]',
-			'nombre' 			=> 'required|alpha_space|min_length[2]',
-			'precio_venta' 			=> 'required|alpha_space|min_length[2]',
-			'precio_compra' 			=> 'required|alpha_space|min_length[2]',
-			'existencias' 			=> 'required|alpha_space|min_length[2]',
-			'stock_minimo' 			=> 'required|alpha_space|min_length[2]',
-			'inventariable' 			=> 'required|alpha_space|min_length[2]',
-			'id_unidades' 			=> 'required|alpha_space|min_length[2]',
-			'id_categoria' 			=> 'required|alpha_space|min_length[2]',
-		];
-
-		if (! $this->validate($rules)) {
-			return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-		}
+		
 
 		$productos = new ProductoModel();
 
@@ -187,6 +182,40 @@ class ProductoController extends Controller
         return redirect()->back()->with('success', 'Producto eliminado correctamente de BDD');
 	}
 
+	public function nuevo()
+	{
+		// load producto model
+		$productos = new ProductoModel();
+		$categorias = new CategoriaModel();
+		$unidades = new UnidadesModel();
+
+		//obtener las categorias
+		$categorias = $categorias->findAll();
+
+		//obtener las unidades
+		$unidades = $unidades->findAll();
+
+		//Definir la data
+		$this->data = [
+			'titulo' => 'Nuevo Producto',
+			'categorias' => $categorias,
+			'unidades' => $unidades
+		];
+
+		//enviar los datos
+		echo view('auth/modals/add-producto', $data);
+
+		// load the view with session dat
+
+		// load the view with session dat
+		//$data = ['titulo' => 'Nuevo Producto', 'productos' => $productos->findAll(), 'categorias' => $categorias->findAll(), 'unidades' => $unidades->findAll()];
+		
+
+		
+		//Enviar datos al modal
+		//$this->load->view('auth/nuevo/nuevo-producto', $this->data);
+	}
+
 	public function createproducto()
 	{
 		helper('text');
@@ -196,8 +225,6 @@ class ProductoController extends Controller
 		$unidade = new UnidadesModel();
 		$categorias = new CategoriaModel();
 
-		$getRule = $productos->getRule('registration');
-		$productos->setValidationRules($getRule);
 
 		$unidade = [
 			'id'  	=> $this->request->getPost('id'),
@@ -211,7 +238,7 @@ class ProductoController extends Controller
 			'existencias'  	=> $this->request->getPost('existencias'),
 			'stock_minimo'  	=> $this->request->getPost('stock_minimo'),
 			'inventariable'  	=> $this->request->getPost('inventariable'),
-			'id_unidades'  	=> $this->request->getPost($unidade),
+			'id_unidades'  	=> $this->request->getPost('id_unidades'),
 			'id_categoria'  	=> $this->request->getPost('id_categoria'),
         ];
 

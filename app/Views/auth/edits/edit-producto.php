@@ -27,16 +27,24 @@
                 <input class="form-control" required type="int" name="precio" value="<?= $producto['precio_compra'] ?>" />
             </div>
             <div class="form-group">
-                <label for="precio">precio</label>
-                <input class="form-control" required type="int" name="precio" value="<?= $producto['existencias'] ?>" />
+                <label for="existencia">existencia</label>
+                <input class="form-control" required type="int" name="existencia" value="<?= $producto['existencias'] ?>" />
             </div>
             <div class="form-group">
-                <label for="precio">precio</label>
-                <input class="form-control" required type="int" name="precio" value="<?= $producto['stock_minimo'] ?>" />
+                <label for="stockminimo">stock minimo</label>
+                <input class="form-control" required type="int" name="stockminimo" value="<?= $producto['stock_minimo'] ?>" />
             </div>
             <div class="form-group">
-                <label for="precio">precio</label>
-                <input class="form-control" required type="int" name="precio" value="<?= $producto['inventariable'] ?>" />
+                <label for="inventariable">inventariable</label>
+                <input class="form-control" required type="int" name="inventariable" value="<?= $producto['inventariable'] ?>" />
+            </div>
+            <div class="form-group">
+                <label for="unidades">unidades</label>
+                <input class="form-control" required type="int" name="unidades" value="<?= $unidades['id'] ?>" />
+            </div>
+            <div class="form-group">
+                <label for="categoria">categoria</label>
+                <input class="form-control" required type="int" name="categoria" value="<?= $producto['id_categoria'] ?>" />
             </div>
             <div class="form-group">
                 <label for="activo">Estado</label>
