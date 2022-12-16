@@ -39,8 +39,7 @@ $routes->get('/', 'Auth\LoginController::login');
 
 
 /* Calculator */
-
-$routes->get('/calculator', 'CalculatorController::index');
+$routes->get('calcular', 'CalculatorController::calcular');
 
 
 
@@ -139,6 +138,16 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
     $routes->get('categorias/delete/(:num)', 'Auth\CategoriasController::delete'); // new
     $routes->post('categorias/create-categoria', 'Auth\CategoriasController::createcategoria');
     $routes->get('categorias/logs', 'Auth\CategoriasController::categoriaLogs', ['as' => 'categorialogs']); // new
+
+    #clientes
+    $routes->get('clientes', 'Auth\ClienteController::clientes', ['as' => 'clientes']); // new
+    $routes->get('clientes/enable/(:num)', 'Auth\ClienteController::enable'); // new
+    $routes->get('clientes/edit/(:num)', 'Auth\ClienteController::edit'); // new
+    $routes->post('clientes/update-cliente', 'Auth\ClienteController::update'); // new
+    $routes->get('clientes/delete/(:num)', 'Auth\ClienteController::delete'); // new
+    $routes->post('clientes/create-cliente', 'Auth\ClienteController::createcliente');
+    $routes->get('clientes/logs', 'Auth\ClienteController::clienteLogs', ['as' => 'clientelogs']); // new
+    
     
     
 

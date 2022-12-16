@@ -5,11 +5,12 @@ use App\Controllers\BaseController;
 
 class CalculatorController extends BaseController
 {
-    public function index($activo = 1)
+    public function calcular()
     {
-
-        echo view('auth/components/header');
-        echo view('auth/calculator');
-        echo view('auth/components/footer');
+        $calcular = $this->request->getVar('calcular');
+        $calcular = $calcular * 0.19;
+        
+        echo $calcular;
+        
     }
 }
